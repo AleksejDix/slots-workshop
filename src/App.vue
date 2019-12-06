@@ -1,28 +1,31 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <ScopedList :list="users">
+      <template #default="{ promote, item: {name: { first, last }} }">
+        <button @click="promote(first)">{{ first + " " + last }}</button>
+      </template>
+    </ScopedList>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import ScopedList from "./components/ScopedList.vue";
 
 export default {
-  name: "app",
   components: {
-    HelloWorld
+    ScopedList
+  },
+  data() {
+    return {
+      users: []
+    };
+  },
+  async mounted() {
+    const response = await fetch(
+      "https://randomuser.me/api/?page=3&results=10&seed=abc"
+    );
+    const json = await response.json();
+    this.users = json.results;
   }
 };
 </script>
-
-<style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
