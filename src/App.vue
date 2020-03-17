@@ -3,15 +3,15 @@
     <nav class="nav">
       <router-link to="/">Home</router-link>
       <router-link
-        v-for="n in 11"
+        v-for="(n, index) in 11"
         :key="n"
         :to="{
           name: 'lesson-id',
           params: {
-            id: n
+            id: index
           }
         }"
-        >Lesson {{ n }}</router-link
+        >Lesson {{ index }}</router-link
       >
     </nav>
     <main class="main">
@@ -61,7 +61,7 @@ body {
 }
 
 .nav a.router-link-exact-active {
-  color: crimson;
+  color: #41b883;
 }
 
 .heroicon-ui {

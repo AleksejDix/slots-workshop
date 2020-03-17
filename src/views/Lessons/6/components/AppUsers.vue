@@ -66,11 +66,7 @@ export default {
       this.data = undefined;
       try {
         const response = await promise;
-        if (!response.ok) {
-          throw new Error(response.statusText || response.status);
-        }
         const json = await response.json();
-        console.log(json);
         this.state = "loaded";
         this.data = json;
         return response;

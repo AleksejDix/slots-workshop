@@ -1,8 +1,21 @@
 <template>
   <button class="button">
-    <span class="button__text"><slot></slot></span>
+    {{ text }}<strong class="bold"> {{ bold }}</strong>
   </button>
 </template>
+
+<script>
+export default {
+  props: {
+    text: {
+      type: String
+    },
+    bold: {
+      type: String
+    }
+  }
+};
+</script>
 
 <style>
 .button {
@@ -14,13 +27,12 @@
   border: none;
   background-color: #41b883;
   border-radius: 0.25rem;
-}
-
-.button__text {
-  padding: 0 0.5rem;
-  font-weight: bold;
   letter-spacing: 0.5px;
   font-size: 1rem;
   line-height: 1.125;
+}
+
+.bold {
+  padding-left: 0.5em;
 }
 </style>

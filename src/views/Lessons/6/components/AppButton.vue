@@ -14,7 +14,7 @@
   padding: 0.375rem 0.75rem;
   min-height: 40px;
   border: none;
-  background-color: crimson;
+  background-color: #41b883;
   border-radius: 0.25rem;
 }
 
