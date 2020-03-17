@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import AppButton from "@/views/Lessons/1/components/AppButton";
+import AppButton from "./components/AppButton";
 export default {
   components: {
     AppButton

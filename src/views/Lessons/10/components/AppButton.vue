@@ -1,7 +1,7 @@
 <template>
-  <button class="button">
-    <slot name="before"><Icon /></slot>
-    <span class="button__text"><slot>Fallback Text</slot></span>
+  <button class="button" v-on="$listeners">
+    <slot name="before"></slot>
+    <span class="button__text"><slot></slot></span>
     <slot name="after"></slot>
   </button>
 </template>

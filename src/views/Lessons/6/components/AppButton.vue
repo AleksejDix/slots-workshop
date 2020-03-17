@@ -1,9 +1,20 @@
 <template>
-  <button class="button" v-on="$listeners">
-    <slot name="before"></slot>
-    <span class="button__text"><slot></slot></span>
-    <slot name="after"></slot>
-  </button>
+  <div>
+    <h1>Styling has no effect</h1>
+    <button class="button">
+      <slot name="before"><Icon /></slot>
+      <span class="button__text"
+        ><slot
+          :style="{
+            padding: '100rem'
+          }"
+          class="mark"
+          >Fallback Text</slot
+        ></span
+      >
+      <slot name="after"></slot>
+    </button>
+  </div>
 </template>
 
 <style>
@@ -24,5 +35,9 @@
   letter-spacing: 0.5px;
   font-size: 1rem;
   line-height: 1.125;
+}
+
+.mark {
+  background-color: hotpink;
 }
 </style>

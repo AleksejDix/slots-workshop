@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import AppButton from "@/views/Lessons/0/components/AppButton";
+import AppButton from "./components/AppButton";
 export default {
   components: {
     AppButton
