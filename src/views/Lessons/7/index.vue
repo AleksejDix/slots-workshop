@@ -3,9 +3,9 @@
     <h1>Conditional wrapper</h1>
     <AppButton>
       buy <strong>now</strong>
-      <!-- <template #second>
+      <template #second>
         only 3 Tickets left
-      </template> -->
+      </template>
     </AppButton>
   </div>
 </template>
